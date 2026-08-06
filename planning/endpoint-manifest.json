@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-06T16:22:33.300Z",
+  "generatedAt": "2026-08-06T16:27:40.970Z",
   "contract": "contracts/jira-software-dc-10.3-openapi.json",
   "contractVersion": "10.3.24",
   "scope": "OpenAPI operations whose path is /api/2 or begins with /api/2/",
   "routePrefix": "/rest/api/2",
   "summary": {
     "totalOperations": 383,
-    "implementedOperations": 167,
-    "testedOperations": 167,
-    "missingOperations": 216
+    "implementedOperations": 187,
+    "testedOperations": 187,
+    "missingOperations": 196
   },
   "groups": [
     {
@@ -44,8 +44,8 @@
     {
       "tag": "filter",
       "total": 14,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 14,
+      "tested": 14
     },
     {
       "tag": "issuetype",
@@ -104,8 +104,8 @@
     {
       "tag": "dashboard",
       "total": 6,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 6,
+      "tested": 6
     },
     {
       "tag": "attachment",
@@ -2170,9 +2170,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -2221,9 +2221,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -2278,9 +2278,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -2339,9 +2339,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -2398,9 +2398,9 @@
         "200": null,
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -2439,9 +2439,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -2692,11 +2692,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "DELETE /api/2/filter/{id}",
@@ -2729,11 +2731,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "GET /api/2/filter/{id}",
@@ -2777,11 +2781,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "PUT /api/2/filter/{id}",
@@ -2833,11 +2839,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "DELETE /api/2/filter/{id}/columns",
@@ -2870,11 +2878,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "GET /api/2/filter/{id}/columns",
@@ -2911,11 +2921,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "PUT /api/2/filter/{id}/columns",
@@ -2967,11 +2979,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "GET /api/2/filter/{id}/permission",
@@ -3008,11 +3022,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "POST /api/2/filter/{id}/permission",
@@ -3057,11 +3073,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "DELETE /api/2/filter/{id}/permission/{permission-id}",
@@ -3114,11 +3132,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "GET /api/2/filter/{id}/permission/{permissionId}",
@@ -3165,11 +3185,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "GET /api/2/filter/defaultShareScope",
@@ -3195,11 +3217,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "PUT /api/2/filter/defaultShareScope",
@@ -3233,11 +3257,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "GET /api/2/filter/favourite",
@@ -3271,11 +3297,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 11-12."
+      ]
     },
     {
       "key": "DELETE /api/2/group",

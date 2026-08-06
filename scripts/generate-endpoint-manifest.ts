@@ -119,7 +119,9 @@ const VERIFIED_TAGS = new Set([
   "configuration",
   "customFieldOption",
   "customFields",
+  "dashboard",
   "field",
+  "filter",
   "group",
   "groups",
   "groupuserpicker",
@@ -157,7 +159,9 @@ const TAG_OWNERS: Record<string, string> = {
   version: "project-assets",
   customFieldOption: "issue-metadata",
   customFields: "issue-metadata",
+  dashboard: "coordinator",
   field: "issue-metadata",
+  filter: "coordinator",
   issueLinkType: "issue-metadata",
   issuetype: "issue-metadata",
   priority: "issue-metadata",
@@ -183,6 +187,7 @@ const TAG_CONTRACT_EXCEPTIONS: Record<string, string[]> = {
   "application-properties": ["See contracts/COMPATIBILITY.md item 4."],
   cluster: ["See contracts/COMPATIBILITY.md item 7."],
   customFields: ["See contracts/COMPATIBILITY.md item 8."],
+  filter: ["See contracts/COMPATIBILITY.md items 11-12."],
   issuetype: ["See contracts/COMPATIBILITY.md items 8-10."],
   priority: ["See contracts/COMPATIBILITY.md item 8."],
   projectCategory: ["Generated list response references the item schema; tests validate each item."],
@@ -198,7 +203,10 @@ function mockPath(contractPath: string): string {
 }
 
 function fastifyPath(contractPath: string): string {
-  return mockPath(contractPath).replaceAll(/\{([^}]+)\}/g, ":$1");
+  return mockPath(contractPath).replaceAll(
+    /\{([^}]+)\}/g,
+    (_match, name: string) => `:${name.replaceAll(/[^A-Za-z0-9_]/g, "_")}`,
+  );
 }
 
 function successStatuses(responses: Record<string, OpenApiResponse> | undefined): string[] {

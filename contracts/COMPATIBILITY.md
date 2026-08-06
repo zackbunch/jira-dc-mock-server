@@ -34,6 +34,8 @@ The tests use narrow, documented workarounds for these upstream issues rather th
 8. The paginated issue type, priority, status, resolution, and custom-field operations reference an item bean (and, for resolutions, an empty bean) instead of a page schema. Tests validate every value against the referenced item schema and separately assert the Jira page envelope and pagination fields.
 9. `DELETE /issuetype/{id}` declares `alternativeIssueTypeId` as a required path parameter even though it is absent from the path template. The mock accepts it as the query parameter used to select a migration target.
 10. The temporary issue-type avatar upload declares an object schema under `text/html`. The mock's deterministic multipart simulation returns the schema-valid JSON representation with that documented media type.
+11. `GET /filter/favourite` and `GET /filter/{id}/permission` describe collections but reference their item schemas. Tests validate every returned array item against the pinned schema and assert non-empty collection structure.
+12. `DELETE /filter/{id}/permission/{permission-id}` uses a hyphenated template variable while also declaring inconsistent `permissionId` and `permission-id` parameters. Route coverage normalizes the template name to `permission_id` internally while preserving the documented external URL.
 
 ## Fidelity boundary
 
