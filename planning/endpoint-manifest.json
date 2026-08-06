@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-06T16:27:40.970Z",
+  "generatedAt": "2026-08-06T16:28:37.006Z",
   "contract": "contracts/jira-software-dc-10.3-openapi.json",
   "contractVersion": "10.3.24",
   "scope": "OpenAPI operations whose path is /api/2 or begins with /api/2/",
   "routePrefix": "/rest/api/2",
   "summary": {
     "totalOperations": 383,
-    "implementedOperations": 187,
-    "testedOperations": 187,
-    "missingOperations": 196
+    "implementedOperations": 258,
+    "testedOperations": 258,
+    "missingOperations": 125
   },
   "groups": [
     {
@@ -32,8 +32,8 @@
     {
       "tag": "workflowscheme",
       "total": 26,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 26,
+      "tested": 26
     },
     {
       "tag": "version",
@@ -56,20 +56,20 @@
     {
       "tag": "screens",
       "total": 13,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 13,
+      "tested": 13
     },
     {
       "tag": "permissionscheme",
       "total": 11,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 11,
+      "tested": 11
     },
     {
       "tag": "issuetypescheme",
       "total": 10,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 10,
+      "tested": 10
     },
     {
       "tag": "cluster",
@@ -134,8 +134,8 @@
     {
       "tag": "priorityschemes",
       "total": 5,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 5,
+      "tested": 5
     },
     {
       "tag": "projectCategory",
@@ -254,8 +254,8 @@
     {
       "tag": "issuesecurityschemes",
       "total": 2,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 2,
+      "tested": 2
     },
     {
       "tag": "jql",
@@ -266,8 +266,8 @@
     {
       "tag": "notificationscheme",
       "total": 2,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 2,
+      "tested": 2
     },
     {
       "tag": "readonly-mode",
@@ -356,8 +356,8 @@
     {
       "tag": "securitylevel",
       "total": 1,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 1,
+      "tested": 1
     },
     {
       "tag": "serverInfo",
@@ -368,8 +368,8 @@
     {
       "tag": "workflow",
       "total": 1,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 1,
+      "tested": 1
     }
   ],
   "operations": [
@@ -6686,11 +6686,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/issuesecurityschemes/{id}",
@@ -6727,11 +6729,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/issuetype",
@@ -7410,11 +7414,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/issuetypescheme",
@@ -7450,11 +7456,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/issuetypescheme/{schemeId}",
@@ -7487,11 +7495,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/issuetypescheme/{schemeId}",
@@ -7528,11 +7538,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/issuetypescheme/{schemeId}",
@@ -7579,11 +7591,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/issuetypescheme/{schemeId}/associations",
@@ -7616,11 +7630,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/issuetypescheme/{schemeId}/associations",
@@ -7665,11 +7681,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/issuetypescheme/{schemeId}/associations",
@@ -7712,11 +7730,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/issuetypescheme/{schemeId}/associations",
@@ -7759,11 +7779,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/issuetypescheme/{schemeId}/associations/{projIdOrKey}",
@@ -7806,11 +7828,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/jql/autocompletedata",
@@ -8545,9 +8569,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -8596,9 +8620,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -8790,9 +8814,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -8838,9 +8862,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -8890,9 +8914,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -8947,9 +8971,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -8985,9 +9009,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9036,9 +9060,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9095,9 +9119,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9146,9 +9170,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9205,9 +9229,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9254,9 +9278,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9316,9 +9340,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -9522,11 +9546,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "POST /api/2/priorityschemes",
@@ -9562,11 +9588,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "DELETE /api/2/priorityschemes/{schemeId}",
@@ -9600,11 +9628,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "GET /api/2/priorityschemes/{schemeId}",
@@ -9642,11 +9672,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "PUT /api/2/priorityschemes/{schemeId}",
@@ -9694,11 +9726,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "GET /api/2/project",
@@ -12886,11 +12920,13 @@
       "responseSchemas": {
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "GET /api/2/screens/{screenId}/availableFields",
@@ -12928,11 +12964,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "GET /api/2/screens/{screenId}/tabs",
@@ -12979,11 +13017,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "POST /api/2/screens/{screenId}/tabs",
@@ -13029,11 +13069,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "DELETE /api/2/screens/{screenId}/tabs/{tabId}",
@@ -13078,11 +13120,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "PUT /api/2/screens/{screenId}/tabs/{tabId}",
@@ -13139,11 +13183,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "GET /api/2/screens/{screenId}/tabs/{tabId}/fields",
@@ -13201,11 +13247,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "POST /api/2/screens/{screenId}/tabs/{tabId}/fields",
@@ -13262,11 +13310,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "DELETE /api/2/screens/{screenId}/tabs/{tabId}/fields/{id}",
@@ -13321,11 +13371,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "POST /api/2/screens/{screenId}/tabs/{tabId}/fields/{id}/move",
@@ -13388,11 +13440,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "PUT /api/2/screens/{screenId}/tabs/{tabId}/fields/{id}/updateShowWhenEmptyIndicator/{newValue}",
@@ -13457,11 +13511,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "POST /api/2/screens/{screenId}/tabs/{tabId}/move/{pos}",
@@ -13517,11 +13573,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "POST /api/2/screens/addToDefault/{fieldId}",
@@ -13553,11 +13611,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "screens-priority-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/screens-priorityschemes-compatibility.md."
+      ]
     },
     {
       "key": "GET /api/2/search",
@@ -13724,9 +13784,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "schemes",
       "notes": [],
       "contractExceptions": []
     },
@@ -17220,11 +17280,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/workflowscheme",
@@ -17256,11 +17318,13 @@
       "responseSchemas": {
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}",
@@ -17294,11 +17358,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}",
@@ -17346,11 +17412,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}",
@@ -17398,11 +17466,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/workflowscheme/{id}/createdraft",
@@ -17440,11 +17510,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/default",
@@ -17491,11 +17563,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/default",
@@ -17543,11 +17617,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/default",
@@ -17595,11 +17671,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/draft",
@@ -17633,11 +17711,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/draft",
@@ -17675,11 +17755,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/draft",
@@ -17727,11 +17809,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/draft/default",
@@ -17769,11 +17853,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/draft/default",
@@ -17811,11 +17897,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/draft/default",
@@ -17863,11 +17951,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/draft/issuetype/{issueType}",
@@ -17915,11 +18005,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/draft/issuetype/{issueType}",
@@ -17967,11 +18059,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/draft/issuetype/{issueType}",
@@ -18029,11 +18123,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/draft/workflow",
@@ -18080,11 +18176,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/draft/workflow",
@@ -18131,11 +18229,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/draft/workflow",
@@ -18192,11 +18292,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/issuetype/{issueType}",
@@ -18253,11 +18355,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/issuetype/{issueType}",
@@ -18315,11 +18419,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/issuetype/{issueType}",
@@ -18377,11 +18483,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/workflowscheme/{id}/workflow",
@@ -18437,11 +18545,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/workflowscheme/{id}/workflow",
@@ -18498,11 +18608,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/workflowscheme/{id}/workflow",
@@ -18559,11 +18671,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "workflow-schemes",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/workflow-schemes-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/worklog/deleted",
