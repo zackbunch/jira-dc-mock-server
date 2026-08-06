@@ -55,6 +55,10 @@ const existingByKey = new Map((existing?.operations ?? []).map((operation) => [o
 // validation in test/official-response-contract.test.ts. The coordinator updates
 // this list only after verifying new operation fixtures.
 const VERIFIED_OPERATIONS = new Set([
+  "GET /api/2/application-properties",
+  "GET /api/2/application-properties/advanced-settings",
+  "PUT /api/2/application-properties/{id}",
+  "GET /api/2/configuration",
   "GET /api/2/field",
   "POST /api/2/issue",
   "GET /api/2/issue/{issueIdOrKey}",
@@ -65,12 +69,25 @@ const VERIFIED_OPERATIONS = new Set([
   "POST /api/2/issue/{issueIdOrKey}/transitions",
   "GET /api/2/issuetype",
   "GET /api/2/myself",
+  "GET /api/2/monitoring/app",
+  "POST /api/2/monitoring/app",
+  "GET /api/2/monitoring/ipd",
+  "POST /api/2/monitoring/ipd",
+  "GET /api/2/monitoring/jmx/areMetricsExposed",
+  "GET /api/2/monitoring/jmx/getAvailableMetrics",
+  "POST /api/2/monitoring/jmx/startExposing",
+  "POST /api/2/monitoring/jmx/stopExposing",
   "GET /api/2/priority",
   "GET /api/2/project",
   "GET /api/2/project/{projectIdOrKey}",
   "GET /api/2/search",
   "POST /api/2/search",
   "GET /api/2/serverInfo",
+  "PUT /api/2/settings/baseUrl",
+  "GET /api/2/settings/columns",
+  "PUT /api/2/settings/columns",
+  "GET /api/2/readonly-mode",
+  "PUT /api/2/readonly-mode",
   "GET /api/2/status",
 ]);
 

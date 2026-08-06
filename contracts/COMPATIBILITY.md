@@ -27,6 +27,7 @@ The tests use narrow, documented workarounds for these upstream issues rather th
 1. `GET /project`, `/field`, `/issuetype`, `/priority`, and `/status` return arrays in Jira, but the generated OpenAPI operation references the item schema instead of an array schema. Tests validate every returned item against that official item schema.
 2. `IssueBean.fields` is dynamic, but the generated schema declares every field value as an object even though Jira's own examples include strings, arrays, numbers, and nulls. Tests relax only `fields.additionalProperties` and retain the rest of `IssueBean` validation.
 3. Several schemas, including `ServerInfoBean`, define no required properties. The tests add focused assertions for important identifiers and collection structure so an empty object cannot pass unnoticed.
+4. `GET /application-properties/advanced-settings` describes and exemplifies an array of properties, but its generated response schema is a single `Property`. The mock returns one deterministic advanced property to follow the pinned response schema; this is intentionally less complete than Jira's real advanced-settings listing.
 
 ## Fidelity boundary
 

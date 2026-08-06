@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
-    "contracts:test": "tsx --test test/official-contract.test.ts test/official-response-contract.test.ts",
+    "contracts:test": "tsx --test test/*.test.ts",
     "contracts:update": "node scripts/download-jira-openapi.mjs",
     "manifest:update": "tsx scripts/generate-endpoint-manifest.ts",
     "start": "node dist/src/server.js",

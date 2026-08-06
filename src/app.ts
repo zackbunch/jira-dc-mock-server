@@ -101,6 +101,24 @@ export function buildApp(options: AppOptions): FastifyInstance {
     }
   });
 
+  app.setErrorHandler(async (error, _request, reply) => {
+    const fastifyError = error as {
+      message?: string;
+      statusCode?: number;
+      validation?: unknown;
+    };
+    if (fastifyError.validation) {
+      return reply.code(400).send(jiraError([fastifyError.message ?? "Request validation failed."]));
+    }
+    const statusCode =
+      fastifyError.statusCode && fastifyError.statusCode >= 400
+        ? fastifyError.statusCode
+        : 500;
+    return reply
+      .code(statusCode)
+      .send(jiraError([fastifyError.message || "An unexpected error occurred."]));
+  });
+
   app.setNotFoundHandler(async (_request, reply) =>
     reply.code(404).send(jiraError(["The requested resource does not exist."])),
   );
