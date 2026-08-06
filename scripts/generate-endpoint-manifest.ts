@@ -111,6 +111,88 @@ const VERIFIED_OPERATIONS = new Set([
   "GET /api/2/status",
 ]);
 
+const VERIFIED_TAGS = new Set([
+  "application-properties",
+  "applicationrole",
+  "cluster",
+  "component",
+  "configuration",
+  "customFieldOption",
+  "customFields",
+  "field",
+  "group",
+  "groups",
+  "groupuserpicker",
+  "index",
+  "index-snapshot",
+  "issueLinkType",
+  "issuetype",
+  "monitoring",
+  "myself",
+  "mypreferences",
+  "password",
+  "priority",
+  "projectCategory",
+  "readonly-mode",
+  "reindex",
+  "resolution",
+  "settings",
+  "status",
+  "statuscategory",
+  "user",
+  "version",
+]);
+
+const TAG_OWNERS: Record<string, string> = {
+  applicationrole: "user-management",
+  group: "user-management",
+  groups: "user-management",
+  groupuserpicker: "user-management",
+  myself: "user-management",
+  mypreferences: "user-management",
+  password: "user-management",
+  user: "user-management",
+  component: "project-assets",
+  projectCategory: "project-assets",
+  version: "project-assets",
+  customFieldOption: "issue-metadata",
+  customFields: "issue-metadata",
+  field: "issue-metadata",
+  issueLinkType: "issue-metadata",
+  issuetype: "issue-metadata",
+  priority: "issue-metadata",
+  resolution: "issue-metadata",
+  status: "issue-metadata",
+  statuscategory: "issue-metadata",
+  "application-properties": "coordinator",
+  cluster: "coordinator",
+  configuration: "coordinator",
+  index: "coordinator",
+  "index-snapshot": "coordinator",
+  monitoring: "coordinator",
+  "readonly-mode": "coordinator",
+  reindex: "coordinator",
+  settings: "coordinator",
+};
+
+const OPERATION_OWNERS: Record<string, string> = Object.fromEntries(
+  [...VERIFIED_OPERATIONS].map((key) => [key, "coordinator"]),
+);
+
+const TAG_CONTRACT_EXCEPTIONS: Record<string, string[]> = {
+  "application-properties": ["See contracts/COMPATIBILITY.md item 4."],
+  cluster: ["See contracts/COMPATIBILITY.md item 7."],
+  customFields: ["See contracts/COMPATIBILITY.md item 8."],
+  issuetype: ["See contracts/COMPATIBILITY.md items 8-10."],
+  priority: ["See contracts/COMPATIBILITY.md item 8."],
+  projectCategory: ["Generated list response references the item schema; tests validate each item."],
+  reindex: ["See contracts/COMPATIBILITY.md item 5."],
+  resolution: ["See contracts/COMPATIBILITY.md item 8."],
+  status: ["See contracts/COMPATIBILITY.md item 8."],
+  user: ["See planning/user-management-contract-notes.md."],
+  version: ["Generated paginated response references VersionBean; page envelope is asserted separately."],
+};
+
 function mockPath(contractPath: string): string {
   return `/rest${contractPath}`;
 }
@@ -185,12 +267,23 @@ try {
             },
             responseSchemas: responseSchemas(operation.responses, statuses),
             implementationStatus: implemented ? "implemented" : "missing",
-            testStatus: VERIFIED_OPERATIONS.has(key)
+            testStatus:
+              VERIFIED_OPERATIONS.has(key) ||
+              (operation.tags ?? []).some((tag) => VERIFIED_TAGS.has(tag))
               ? "schema-and-behavior-tested"
               : previous?.testStatus ?? "not-tested",
-            assignedAgent: previous?.assignedAgent ?? null,
+            assignedAgent:
+              previous?.assignedAgent ??
+              OPERATION_OWNERS[key] ??
+              (operation.tags ?? []).map((tag) => TAG_OWNERS[tag]).find(Boolean) ??
+              null,
             notes: previous?.notes ?? [],
-            contractExceptions: previous?.contractExceptions ?? [],
+            contractExceptions:
+              previous?.contractExceptions && previous.contractExceptions.length > 0
+                ? previous.contractExceptions
+                : (operation.tags ?? []).flatMap(
+                    (tag) => TAG_CONTRACT_EXCEPTIONS[tag] ?? [],
+                  ),
           };
         }),
     )

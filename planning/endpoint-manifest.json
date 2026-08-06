@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-06T16:20:51.016Z",
+  "generatedAt": "2026-08-06T16:22:33.300Z",
   "contract": "contracts/jira-software-dc-10.3-openapi.json",
   "contractVersion": "10.3.24",
   "scope": "OpenAPI operations whose path is /api/2 or begins with /api/2/",
   "routePrefix": "/rest/api/2",
   "summary": {
     "totalOperations": 383,
-    "implementedOperations": 54,
-    "testedOperations": 54,
-    "missingOperations": 329
+    "implementedOperations": 167,
+    "testedOperations": 167,
+    "missingOperations": 216
   },
   "groups": [
     {
@@ -26,8 +26,8 @@
     {
       "tag": "user",
       "total": 36,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 36,
+      "tested": 36
     },
     {
       "tag": "workflowscheme",
@@ -38,8 +38,8 @@
     {
       "tag": "version",
       "total": 16,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 16,
+      "tested": 16
     },
     {
       "tag": "filter",
@@ -50,8 +50,8 @@
     {
       "tag": "issuetype",
       "total": 13,
-      "implemented": 1,
-      "tested": 1
+      "implemented": 13,
+      "tested": 13
     },
     {
       "tag": "screens",
@@ -98,8 +98,8 @@
     {
       "tag": "component",
       "total": 6,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 6,
+      "tested": 6
     },
     {
       "tag": "dashboard",
@@ -122,14 +122,14 @@
     {
       "tag": "group",
       "total": 5,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 5,
+      "tested": 5
     },
     {
       "tag": "issueLinkType",
       "total": 5,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 5,
+      "tested": 5
     },
     {
       "tag": "priorityschemes",
@@ -140,14 +140,14 @@
     {
       "tag": "projectCategory",
       "total": 5,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 5,
+      "tested": 5
     },
     {
       "tag": "applicationrole",
       "total": 4,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 4,
+      "tested": 4
     },
     {
       "tag": "comment",
@@ -176,8 +176,8 @@
     {
       "tag": "customFields",
       "total": 3,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "index-snapshot",
@@ -194,32 +194,32 @@
     {
       "tag": "mypreferences",
       "total": 3,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "myself",
       "total": 3,
-      "implemented": 1,
-      "tested": 1
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "password",
       "total": 3,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "priority",
       "total": 3,
-      "implemented": 1,
-      "tested": 1
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "resolution",
       "total": 3,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "settings",
@@ -230,8 +230,8 @@
     {
       "tag": "status",
       "total": 3,
-      "implemented": 1,
-      "tested": 1
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "terminology",
@@ -248,8 +248,8 @@
     {
       "tag": "field",
       "total": 2,
-      "implemented": 1,
-      "tested": 1
+      "implemented": 2,
+      "tested": 2
     },
     {
       "tag": "issuesecurityschemes",
@@ -284,8 +284,8 @@
     {
       "tag": "statuscategory",
       "total": 2,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 2,
+      "tested": 2
     },
     {
       "tag": "upgrade",
@@ -302,20 +302,20 @@
     {
       "tag": "customFieldOption",
       "total": 1,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 1,
+      "tested": 1
     },
     {
       "tag": "groups",
       "total": 1,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 1,
+      "tested": 1
     },
     {
       "tag": "groupuserpicker",
       "total": 1,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 1,
+      "tested": 1
     },
     {
       "tag": "index",
@@ -429,9 +429,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 4."
+      ]
     },
     {
       "key": "PUT /api/2/application-properties/{id}",
@@ -470,9 +472,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 4."
+      ]
     },
     {
       "key": "GET /api/2/application-properties/advanced-settings",
@@ -500,9 +504,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 4."
+      ]
     },
     {
       "key": "GET /api/2/applicationrole",
@@ -528,9 +534,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -576,9 +582,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -617,9 +623,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -684,9 +690,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -1055,9 +1061,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "DELETE /api/2/cluster/node/{nodeId}",
@@ -1092,9 +1100,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "PUT /api/2/cluster/node/{nodeId}/offline",
@@ -1129,9 +1139,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "GET /api/2/cluster/nodes",
@@ -1159,9 +1171,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "POST /api/2/cluster/zdu/approve",
@@ -1185,9 +1199,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "POST /api/2/cluster/zdu/cancel",
@@ -1211,9 +1227,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "POST /api/2/cluster/zdu/retryUpgrade",
@@ -1237,9 +1255,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "POST /api/2/cluster/zdu/start",
@@ -1263,9 +1283,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "GET /api/2/cluster/zdu/state",
@@ -1293,9 +1315,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 7."
+      ]
     },
     {
       "key": "GET /api/2/comment/{commentId}/properties",
@@ -1523,9 +1547,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
       "contractExceptions": []
     },
@@ -1571,9 +1595,9 @@
         "200": null,
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
       "contractExceptions": []
     },
@@ -1612,9 +1636,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
       "contractExceptions": []
     },
@@ -1662,9 +1686,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
       "contractExceptions": []
     },
@@ -1703,9 +1727,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
       "contractExceptions": []
     },
@@ -1772,9 +1796,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
       "contractExceptions": []
     },
@@ -1804,7 +1828,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -1843,9 +1867,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -1884,11 +1908,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/customFields",
@@ -1996,11 +2022,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/customFields/{customFieldId}/options",
@@ -2082,11 +2110,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/dashboard",
@@ -2580,7 +2610,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -2616,9 +2646,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -3287,9 +3317,9 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3325,9 +3355,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3393,9 +3423,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3440,9 +3470,9 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3489,9 +3519,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3556,9 +3586,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3641,9 +3671,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -3673,7 +3703,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -3703,7 +3733,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -3733,7 +3763,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -3763,7 +3793,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -3812,7 +3842,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -3935,7 +3965,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -3990,7 +4020,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -4211,7 +4241,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -4270,7 +4300,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -5360,7 +5390,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -5406,7 +5436,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -6437,9 +6467,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -6473,9 +6503,9 @@
       "responseSchemas": {
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -6510,9 +6540,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -6551,9 +6581,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -6598,9 +6628,9 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -6701,9 +6731,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "POST /api/2/issuetype",
@@ -6735,11 +6767,13 @@
       "responseSchemas": {
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "DELETE /api/2/issuetype/{id}",
@@ -6782,11 +6816,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "GET /api/2/issuetype/{id}",
@@ -6823,11 +6859,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "PUT /api/2/issuetype/{id}",
@@ -6870,11 +6908,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "GET /api/2/issuetype/{id}/alternatives",
@@ -6911,11 +6951,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "POST /api/2/issuetype/{id}/avatar",
@@ -6962,11 +7004,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "POST /api/2/issuetype/{id}/avatar/temporary",
@@ -7011,11 +7055,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "GET /api/2/issuetype/{issueTypeId}/properties",
@@ -7052,11 +7098,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "DELETE /api/2/issuetype/{issueTypeId}/properties/{propertyKey}",
@@ -7099,11 +7147,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "GET /api/2/issuetype/{issueTypeId}/properties/{propertyKey}",
@@ -7150,11 +7200,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "PUT /api/2/issuetype/{issueTypeId}/properties/{propertyKey}",
@@ -7210,11 +7262,13 @@
         "200": null,
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "GET /api/2/issuetype/page",
@@ -7296,11 +7350,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md items 8-10."
+      ]
     },
     {
       "key": "GET /api/2/issuetypescheme",
@@ -7892,7 +7948,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -7928,7 +7984,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -7958,7 +8014,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -7994,7 +8050,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -8025,7 +8081,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -8056,7 +8112,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -8082,7 +8138,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -8108,7 +8164,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -8209,9 +8265,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8250,9 +8306,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8295,9 +8351,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8327,7 +8383,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8365,9 +8421,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8401,9 +8457,9 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8554,9 +8610,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8595,9 +8651,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -8636,9 +8692,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
       "contractExceptions": []
     },
@@ -9264,9 +9320,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/priority/{id}",
@@ -9303,11 +9361,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/priority/page",
@@ -9381,11 +9441,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/priorityschemes",
@@ -9674,7 +9736,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -9801,7 +9863,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -11477,11 +11539,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated list response references the item schema; tests validate each item."
+      ]
     },
     {
       "key": "POST /api/2/projectCategory",
@@ -11517,11 +11581,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated list response references the item schema; tests validate each item."
+      ]
     },
     {
       "key": "DELETE /api/2/projectCategory/{id}",
@@ -11555,11 +11621,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated list response references the item schema; tests validate each item."
+      ]
     },
     {
       "key": "GET /api/2/projectCategory/{id}",
@@ -11597,11 +11665,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated list response references the item schema; tests validate each item."
+      ]
     },
     {
       "key": "PUT /api/2/projectCategory/{id}",
@@ -11649,11 +11719,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated list response references the item schema; tests validate each item."
+      ]
     },
     {
       "key": "GET /api/2/projects/picker",
@@ -11783,7 +11855,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -11817,7 +11889,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -11858,9 +11930,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "POST /api/2/reindex",
@@ -11928,9 +12002,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "POST /api/2/reindex/issue",
@@ -12002,9 +12078,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "GET /api/2/reindex/progress",
@@ -12043,9 +12121,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "POST /api/2/reindex/request",
@@ -12075,9 +12155,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "GET /api/2/reindex/request/{requestId}",
@@ -12117,9 +12199,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "GET /api/2/reindex/request/bulk",
@@ -12163,9 +12247,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 5."
+      ]
     },
     {
       "key": "GET /api/2/resolution",
@@ -12191,11 +12277,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/resolution/{id}",
@@ -12232,11 +12320,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/resolution/page",
@@ -12295,11 +12385,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/role",
@@ -13525,7 +13617,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -13565,7 +13657,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -13636,7 +13728,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -13671,7 +13763,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -13701,7 +13793,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -13746,7 +13838,7 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "coordinator",
       "notes": [],
       "contractExceptions": []
     },
@@ -13776,9 +13868,11 @@
       },
       "implementationStatus": "implemented",
       "testStatus": "schema-and-behavior-tested",
-      "assignedAgent": null,
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/status/{idOrName}",
@@ -13815,11 +13909,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/status/page",
@@ -13907,11 +14003,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See contracts/COMPATIBILITY.md item 8."
+      ]
     },
     {
       "key": "GET /api/2/statuscategory",
@@ -13956,9 +14054,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -13997,9 +14095,9 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "issue-metadata",
       "notes": [],
       "contractExceptions": []
     },
@@ -14423,11 +14521,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user",
@@ -14481,11 +14581,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/user",
@@ -14521,11 +14623,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/user",
@@ -14580,11 +14684,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/a11y/personal-settings",
@@ -14610,11 +14716,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/anonymization",
@@ -14655,11 +14763,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/user/anonymization",
@@ -14691,11 +14801,13 @@
       "responseSchemas": {
         "202": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/anonymization/progress",
@@ -14728,11 +14840,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/anonymization/rerun",
@@ -14795,11 +14909,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/user/anonymization/rerun",
@@ -14831,11 +14947,13 @@
       "responseSchemas": {
         "202": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/user/anonymization/unlock",
@@ -14857,11 +14975,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/user/application",
@@ -14902,11 +15022,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/user/application",
@@ -14947,11 +15069,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/assignable/multiProjectSearch",
@@ -15007,11 +15131,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/assignable/search",
@@ -15084,11 +15210,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/user/avatar",
@@ -15134,11 +15262,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/user/avatar",
@@ -15184,11 +15314,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/user/avatar/{id}",
@@ -15231,11 +15363,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "POST /api/2/user/avatar/temporary",
@@ -15277,11 +15411,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/avatars",
@@ -15317,11 +15453,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/user/columns",
@@ -15353,11 +15491,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/columns",
@@ -15393,11 +15533,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/user/columns",
@@ -15442,11 +15584,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/duplicated/count",
@@ -15482,11 +15626,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/duplicated/list",
@@ -15522,11 +15668,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/list",
@@ -15574,11 +15722,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/user/password",
@@ -15629,11 +15779,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/permission/search",
@@ -15716,11 +15868,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/picker",
@@ -15788,11 +15942,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/properties",
@@ -15833,11 +15989,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/user/properties/{propertyKey}",
@@ -15888,11 +16046,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/properties/{propertyKey}",
@@ -15943,11 +16103,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "PUT /api/2/user/properties/{propertyKey}",
@@ -16010,11 +16172,13 @@
         "200": null,
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/search",
@@ -16088,11 +16252,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "DELETE /api/2/user/session/{username}",
@@ -16125,11 +16291,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/user/viewissue/search",
@@ -16193,11 +16361,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "user-management",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "See planning/user-management-contract-notes.md."
+      ]
     },
     {
       "key": "GET /api/2/version",
@@ -16271,11 +16441,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "POST /api/2/version",
@@ -16311,11 +16483,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/version/{id}",
@@ -16360,11 +16534,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "PUT /api/2/version/{id}",
@@ -16407,11 +16583,13 @@
       "responseSchemas": {
         "200": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "PUT /api/2/version/{id}/mergeto/{moveIssuesTo}",
@@ -16454,11 +16632,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "POST /api/2/version/{id}/move",
@@ -16505,11 +16685,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/version/{id}/relatedIssueCounts",
@@ -16546,11 +16728,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "POST /api/2/version/{id}/removeAndSwap",
@@ -16593,11 +16777,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/version/{id}/unresolvedIssueCount",
@@ -16634,11 +16820,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "DELETE /api/2/version/{versionId}/remotelink",
@@ -16671,11 +16859,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/version/{versionId}/remotelink",
@@ -16712,11 +16902,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "POST /api/2/version/{versionId}/remotelink",
@@ -16759,11 +16951,13 @@
       "responseSchemas": {
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "DELETE /api/2/version/{versionId}/remotelink/{globalId}",
@@ -16806,11 +17000,13 @@
       "responseSchemas": {
         "204": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/version/{versionId}/remotelink/{globalId}",
@@ -16857,11 +17053,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "POST /api/2/version/{versionId}/remotelink/{globalId}",
@@ -16914,11 +17112,13 @@
       "responseSchemas": {
         "201": null
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/version/remotelink",
@@ -16954,11 +17154,13 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
-      "assignedAgent": null,
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
+      "assignedAgent": "project-assets",
       "notes": [],
-      "contractExceptions": []
+      "contractExceptions": [
+        "Generated paginated response references VersionBean; page envelope is asserted separately."
+      ]
     },
     {
       "key": "GET /api/2/workflow",
