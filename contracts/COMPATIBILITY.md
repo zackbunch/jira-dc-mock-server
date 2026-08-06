@@ -36,6 +36,10 @@ The tests use narrow, documented workarounds for these upstream issues rather th
 10. The temporary issue-type avatar upload declares an object schema under `text/html`. The mock's deterministic multipart simulation returns the schema-valid JSON representation with that documented media type.
 11. `GET /filter/favourite` and `GET /filter/{id}/permission` describe collections but reference their item schemas. Tests validate every returned array item against the pinned schema and assert non-empty collection structure.
 12. `DELETE /filter/{id}/permission/{permission-id}` uses a hyphenated template variable while also declaring inconsistent `permissionId` and `permission-id` parameters. Route coverage normalizes the template name to `permission_id` internally while preserving the documented external URL.
+13. `GET /avatar/{type}/system` and `GET /universal_avatar/type/{type}/owner/{owningObjectId}` describe collections but declare a single `AvatarBean`. The mock returns the selected matching avatar to follow the pinned response schema.
+14. `POST /avatar/{type}/temporaryCrop` declares only `400` and `500` responses, omitting every success response. The mock returns `201` with the neighboring avatar-create operation's `AvatarBean` schema after a valid persistent crop.
+15. `GET /terminology/entries` describes a collection but declares one `TerminologyResponseBean`, while `POST /terminology/entries` omits every success response. Tests validate each returned entry against the item schema; a valid persistent update returns an empty `204`.
+16. The email-template download, upload, apply, revert, and types operations define successful statuses without content schemas. Tests assert their documented media/empty-body behavior directly: a valid ZIP download/upload, empty mutation bodies, and a deterministic text type listing.
 
 ## Fidelity boundary
 
