@@ -30,6 +30,7 @@ The tests use narrow, documented workarounds for these upstream issues rather th
 4. `GET /application-properties/advanced-settings` describes and exemplifies an array of properties, but its generated response schema is a single `Property`. The mock returns one deterministic advanced property to follow the pinned response schema; this is intentionally less complete than Jira's real advanced-settings listing.
 5. `POST /reindex/request` describes an array of request IDs but declares a single integer response, and `GET /reindex/request/bulk` describes an array of results but declares one `ReindexRequestBean`. The mock follows those pinned schemas by returning one deterministic ID or request object per call.
 6. `GET /index-snapshot` describes a list but declares one `IndexSnapshotBean`. The mock returns the newest available snapshot so the response remains schema-valid.
+7. `GET /cluster/nodes` describes a list of nodes but declares the item schema `NodeBean`. Tests validate each node in the returned array against that schema, matching Jira's documented collection behavior.
 
 ## Fidelity boundary
 
