@@ -84,6 +84,7 @@ export interface JiraIssue {
 export interface JiraState {
   issueCounter: number;
   commentCounter: number;
+  resources: Record<string, unknown>;
   users: JiraUser[];
   projects: JiraProject[];
   issueTypes: JiraNamedResource[];

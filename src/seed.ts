@@ -143,6 +143,7 @@ export function createDefaultState(): JiraState {
   const initial: JiraState = {
     issueCounter: 10016,
     commentCounter: 1,
+    resources: {},
     users: [developer, alex],
     projects,
     issueTypes,

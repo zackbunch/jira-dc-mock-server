@@ -46,12 +46,12 @@ export const enrichRouteSchema: onRouteHookHandler = (routeOptions) => {
     "POST /__admin/reset": "Reset all mock data",
   };
 
-  schema.tags = [tag];
-  schema.summary = summaries[`${method} ${url}`] ?? `${method} ${url}`;
-  schema.security = [{ bearerAuth: [] }, { basicAuth: [] }];
+  schema.tags ??= [tag];
+  schema.summary ??= summaries[`${method} ${url}`] ?? `${method} ${url}`;
+  schema.security ??= [{ bearerAuth: [] }, { basicAuth: [] }];
 
   if (pathParameters.length > 0) {
-    schema.params = {
+    schema.params ??= {
       type: "object",
       properties: Object.fromEntries(
         pathParameters.map((parameter) => [parameter, { type: "string" }]),

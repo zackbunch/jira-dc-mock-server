@@ -20,7 +20,9 @@ export class JiraStore {
     }
 
     try {
-      return JSON.parse(readFileSync(this.dataFile, "utf8")) as JiraState;
+      const state = JSON.parse(readFileSync(this.dataFile, "utf8")) as JiraState;
+      state.resources ??= {};
+      return state;
     } catch (error) {
       throw new Error(`Unable to read Jira mock state at ${this.dataFile}`, { cause: error });
     }
@@ -41,4 +43,16 @@ export class JiraStore {
     writeFileSync(temporaryFile, `${JSON.stringify(state, null, 2)}\n`, "utf8");
     renameSync(temporaryFile, this.dataFile);
   }
+}
+
+export function getResourceState<T>(
+  store: JiraStore,
+  key: string,
+  createDefault: () => T,
+): T {
+  if (!(key in store.state.resources)) {
+    store.state.resources[key] = structuredClone(createDefault());
+    store.save();
+  }
+  return store.state.resources[key] as T;
 }

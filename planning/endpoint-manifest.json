@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T16:09:58.526Z",
+  "generatedAt": "2026-08-06T16:11:12.214Z",
   "contract": "contracts/jira-software-dc-10.3-openapi.json",
   "contractVersion": "10.3.24",
   "scope": "OpenAPI operations whose path is /api/2 or begins with /api/2/",
