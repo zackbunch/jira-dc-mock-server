@@ -84,7 +84,7 @@ function defaultState(): IssueAdjunctsState {
         id: "30001",
         issueId: "10002",
         filename: "rotation-notes.txt",
-        authorName: "alex",
+        authorName: "frank.lillo",
         created: "2026-01-12T15:00:00.000+0000",
         size: 2048,
         mimeType: "text/plain",
@@ -121,7 +121,7 @@ function defaultState(): IssueAdjunctsState {
       {
         id: 40001,
         issueId: "10005",
-        authorName: "alex",
+        authorName: "frank.lillo",
         comment: "Reproduced the intermittent integration failure.",
         created: "2026-02-04T14:00:00.000+0000",
         updated: "2026-02-04T14:15:00.000+0000",

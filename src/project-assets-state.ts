@@ -82,7 +82,7 @@ function createDefaultProjectAssetsState(): ProjectAssetsState {
         name: "Delivery automation",
         description: "Common delivery automation",
         projectId: "10001",
-        leadUserName: "alex",
+        leadUserName: "michael.welnick",
         assigneeType: "PROJECT_LEAD",
         archived: false,
         deleted: false,

@@ -13,6 +13,11 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Added browser-session bearer token handling, server health feedback, accessible keyboard controls, mobile issue inspection, and a guarded seed-data reset flow.
 - Added dashboard route coverage, Docker packaging for the framework-free frontend assets, and product/design documentation for future UI work.
 
+### Changed
+
+- Replaced fictional seeded users with Software Factory team members Zack Bunch, Frank Lillo, and Michael Welnick.
+- Expanded the seeded `T100ZB` backlog from 12 to 100 tickets, for 103 tickets across all projects.
+
 ## 0.1.0 - 2026-08-06
 
 ### Added

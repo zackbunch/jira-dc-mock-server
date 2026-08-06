@@ -110,19 +110,23 @@ test("seeds a varied software factory backlog", async (t) => {
     headers: authorization,
     payload: {
       jql: "project = T100ZB ORDER BY key ASC",
-      fields: ["summary", "status", "priority", "labels"],
-      maxResults: 50,
+      fields: ["summary", "status", "priority", "assignee", "labels"],
+      maxResults: 100,
     },
   });
 
   assert.equal(response.statusCode, 200);
   const result = response.json();
-  assert.equal(result.total, 12);
+  assert.equal(result.total, 100);
   assert.equal(result.issues[0].key, "T100ZB-1");
-  assert.equal(result.issues.at(-1).key, "T100ZB-12");
+  assert.equal(result.issues.at(-1).key, "T100ZB-100");
   assert.deepEqual(
     new Set(result.issues.map((issue: { fields: { status: { name: string } } }) => issue.fields.status.name)),
     new Set(["To Do", "In Progress", "Done"]),
+  );
+  assert.deepEqual(
+    new Set(result.issues.map((issue: { fields: { assignee: { displayName: string } } }) => issue.fields.assignee.displayName)),
+    new Set(["Zack Bunch", "Frank Lillo", "Michael Welnick"]),
   );
 });
 
@@ -144,13 +148,13 @@ test("creates, edits, comments on, and transitions an issue", async (t) => {
   });
   assert.equal(createdResponse.statusCode, 201);
   const created = createdResponse.json();
-  assert.equal(created.key, "T100ZB-13");
+  assert.equal(created.key, "T100ZB-101");
 
   const editResponse = await app.inject({
     method: "PUT",
     url: `/rest/api/2/issue/${created.key}`,
     headers: authorization,
-    payload: { fields: { assignee: { name: "alex" }, customfield_10002: 8 } },
+    payload: { fields: { assignee: { name: "frank.lillo" }, customfield_10002: 8 } },
   });
   assert.equal(editResponse.statusCode, 204);
 
@@ -185,7 +189,7 @@ test("creates, edits, comments on, and transitions an issue", async (t) => {
     headers: authorization,
   });
   const issue = issueResponse.json();
-  assert.equal(issue.fields.assignee.name, "alex");
+  assert.equal(issue.fields.assignee.name, "frank.lillo");
   assert.equal(issue.fields.status.name, "In Progress");
   assert.equal(issue.fields.customfield_10002, 8);
   assert.equal(issue.fields.comment.total, 1);

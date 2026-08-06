@@ -17,20 +17,31 @@ const avatarUrls = {
 const developer: JiraUser = {
   key: "developer",
   name: "developer",
-  emailAddress: "developer@example.test",
+  emailAddress: "zack.bunch@example.test",
   avatarUrls,
-  displayName: "Local Developer",
+  displayName: "Zack Bunch",
   active: true,
   timeZone: "UTC",
   locale: "en_US",
 };
 
-const alex: JiraUser = {
-  key: "alex",
-  name: "alex",
-  emailAddress: "alex@example.test",
+const frank: JiraUser = {
+  key: "frank.lillo",
+  name: "frank.lillo",
+  emailAddress: "frank.lillo@example.test",
   avatarUrls,
-  displayName: "Alex Example",
+  displayName: "Frank Lillo",
+  active: true,
+  timeZone: "UTC",
+  locale: "en_US",
+};
+
+const michael: JiraUser = {
+  key: "michael.welnick",
+  name: "michael.welnick",
+  emailAddress: "michael.welnick@example.test",
+  avatarUrls,
+  displayName: "Michael Welnick",
   active: true,
   timeZone: "UTC",
   locale: "en_US",
@@ -54,7 +65,7 @@ const projects: JiraProject[] = [
     projectTypeKey: "software",
     simplified: false,
     archived: false,
-    lead: alex,
+    lead: michael,
     avatarUrls,
   },
   {
@@ -139,12 +150,71 @@ function issue(
   };
 }
 
+const backlogThemes = [
+  ["service catalog metadata", "service-catalog"],
+  ["golden-path templates", "golden-path"],
+  ["continuous integration pipelines", "ci"],
+  ["deployment orchestration", "deployment"],
+  ["ephemeral preview environments", "preview-environments"],
+  ["artifact repository governance", "artifacts"],
+  ["software supply-chain controls", "supply-chain"],
+  ["container image hardening", "containers"],
+  ["Kubernetes platform upgrades", "kubernetes"],
+  ["developer portal workflows", "developer-portal"],
+  ["build runner capacity", "runners"],
+  ["secrets rotation automation", "secrets"],
+  ["release provenance", "provenance"],
+  ["SBOM publication", "sbom"],
+  ["DORA metrics collection", "dora"],
+  ["platform observability", "observability"],
+  ["dependency update automation", "dependencies"],
+  ["test reliability reporting", "testing"],
+  ["production readiness reviews", "readiness"],
+  ["tenant onboarding", "onboarding"],
+  ["incident response runbooks", "incident-response"],
+  ["cloud cost visibility", "finops"],
+] as const;
+
+const backlogActions = [
+  ["Define standards for", "Document the supported contract, ownership model, and adoption requirements for", "standards"],
+  ["Automate", "Implement deterministic automation and validation for", "automation"],
+  ["Add operational monitoring for", "Publish health signals, actionable alerts, and support dashboards for", "monitoring"],
+  ["Validate resilience of", "Exercise failure modes and record recovery guidance for", "resilience"],
+] as const;
+
+function expandedSoftwareFactoryBacklog(): JiraIssue[] {
+  const team = [developer, frank, michael];
+  return backlogThemes.flatMap(([theme, themeLabel], themeIndex) =>
+    backlogActions.map(([prefix, descriptionPrefix, actionLabel], actionIndex) => {
+      const offset = themeIndex * backlogActions.length + actionIndex;
+      const ticketNumber = 13 + offset;
+      const created = new Date(Date.UTC(2026, 2, 1 + offset, 9, 0, 0))
+        .toISOString()
+        .replace("Z", "+0000");
+      return issue(
+        String(10016 + offset),
+        `T100ZB-${ticketNumber}`,
+        projects[2],
+        issueTypes[offset % issueTypes.length],
+        `${prefix} ${theme}`,
+        `${descriptionPrefix} ${theme} across the Software Factory platform.`,
+        statuses[offset % statuses.length],
+        priorities[offset % priorities.length],
+        team[offset % team.length],
+        created,
+        ["software-factory", themeLabel, actionLabel],
+        [2, 3, 5, 8, 13][offset % 5],
+      );
+    }),
+  );
+}
+
 export function createDefaultState(): JiraState {
   const initial: JiraState = {
-    issueCounter: 10016,
+    issueCounter: 10104,
     commentCounter: 1,
     resources: {},
-    users: [developer, alex],
+    users: [developer, frank, michael],
     projects,
     issueTypes,
     priorities,
@@ -173,7 +243,7 @@ export function createDefaultState(): JiraState {
         "Consumers of the common authentication client cannot refresh credentials after a signing-key rotation.",
         statuses[0],
         priorities[1],
-        alex,
+        frank,
         "2026-01-12T14:30:00.000+0000",
         ["common-code", "authentication", "agent-training"],
         5,
@@ -214,7 +284,7 @@ export function createDefaultState(): JiraState {
         "The integration test stage fails around one in five runs without a consistent failing test.",
         statuses[0],
         priorities[0],
-        alex,
+        frank,
         "2026-02-04T13:10:00.000+0000",
         ["ci", "flaky-test", "pipeline"],
         5,
@@ -241,7 +311,7 @@ export function createDefaultState(): JiraState {
         "Define retention periods for snapshots, release candidates, and production artifacts.",
         statuses[0],
         priorities[2],
-        alex,
+        michael,
         "2026-02-08T09:45:00.000+0000",
         ["artifacts", "governance"],
         3,
@@ -269,7 +339,7 @@ export function createDefaultState(): JiraState {
         "Attach signed provenance metadata to every production artifact.",
         statuses[0],
         priorities[1],
-        alex,
+        frank,
         "2026-02-14T11:00:00.000+0000",
         ["release", "provenance", "supply-chain"],
       ),
@@ -295,7 +365,7 @@ export function createDefaultState(): JiraState {
         "Unchanged packages are rebuilt and retested on every merge request.",
         statuses[0],
         priorities[1],
-        alex,
+        michael,
         "2026-02-19T16:40:00.000+0000",
         ["performance", "ci", "monorepo"],
         8,
@@ -322,7 +392,7 @@ export function createDefaultState(): JiraState {
         "Calculate DORA delivery metrics from pipeline and deployment events.",
         statuses[0],
         priorities[2],
-        alex,
+        frank,
         "2026-02-24T09:10:00.000+0000",
         ["observability", "dora", "metrics"],
         8,
@@ -350,10 +420,11 @@ export function createDefaultState(): JiraState {
         "Produce CycloneDX software bills of materials and retain them with release artifacts.",
         statuses[0],
         priorities[1],
-        alex,
+        michael,
         "2026-02-28T10:25:00.000+0000",
         ["sbom", "security", "release"],
       ),
+      ...expandedSoftwareFactoryBacklog(),
     ],
   };
 

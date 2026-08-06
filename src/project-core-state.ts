@@ -61,7 +61,7 @@ function defaultState(): ProjectCoreState {
     ],
     defaultRoleActors: {
       "10000": { users: ["developer"], groups: [] },
-      "10001": { users: ["developer", "alex"], groups: ["jira-software-users"] },
+      "10001": { users: ["developer", "frank.lillo", "michael.welnick"], groups: ["jira-software-users"] },
       "10002": { users: [], groups: ["jira-software-users"] },
     },
     projectRoleActors: {},

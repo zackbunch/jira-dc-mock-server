@@ -79,7 +79,7 @@ test("all project and role mutations are persistent, validated, and schema-valid
   assert.equal(created.response.statusCode, 201);
   assertMatchesResponse("/api/2/project", "post", 201, created.body);
   const projectId = String((created.body as { id: number }).id);
-  const updated = await req(app, "PUT", `/rest/api/2/project/${projectId}`, { key: "AGENT", name: "Agent Project Updated", lead: "alex", description: "Updated" });
+  const updated = await req(app, "PUT", `/rest/api/2/project/${projectId}`, { key: "AGENT", name: "Agent Project Updated", lead: "frank.lillo", description: "Updated" });
   assertMatchesResponse("/api/2/project/{projectIdOrKey}", "put", 200, updated.body);
   const type = await req(app, "PUT", `/rest/api/2/project/${projectId}/type/business`);
   assertMatchesResponse("/api/2/project/{projectIdOrKey}/type/{newProjectTypeKey}", "put", 200, type.body);
@@ -107,9 +107,9 @@ test("all project and role mutations are persistent, validated, and schema-valid
 
   const putRole = await req(app, "PUT", `/rest/api/2/project/${projectId}/role/10001`, { categorisedActors: { "atlassian-user-role-actor": ["developer"], "atlassian-group-role-actor": ["jira-software-users"] } });
   assertMatchesResponse("/api/2/project/{projectIdOrKey}/role/{id}", "put", 200, putRole.body);
-  const postRole = await req(app, "POST", `/rest/api/2/project/${projectId}/role/10001`, { user: ["alex"], group: [] });
+  const postRole = await req(app, "POST", `/rest/api/2/project/${projectId}/role/10001`, { user: ["frank.lillo"], group: [] });
   assertMatchesResponse("/api/2/project/{projectIdOrKey}/role/{id}", "post", 200, postRole.body);
-  empty("/api/2/project/{projectIdOrKey}/role/{id}", "delete", 204, await req(app, "DELETE", `/rest/api/2/project/${projectId}/role/10001?user=alex`));
+  empty("/api/2/project/{projectIdOrKey}/role/{id}", "delete", 204, await req(app, "DELETE", `/rest/api/2/project/${projectId}/role/10001?user=frank.lillo`));
 
   const assignedPermission = await req(app, "PUT", `/rest/api/2/project/${projectId}/permissionscheme`, { id: 10001 });
   assertMatchesResponse("/api/2/project/{projectKeyOrId}/permissionscheme", "put", 200, assignedPermission.body);

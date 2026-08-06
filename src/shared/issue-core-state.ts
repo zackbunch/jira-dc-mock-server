@@ -76,7 +76,7 @@ function defaultState(): IssueCoreState {
       "10004": { "mock.delivery": { owner: "platform", tier: "gold" } },
     },
     votes: {},
-    watchers: { "10004": ["alex"] },
+    watchers: { "10004": ["frank.lillo"] },
     attachments: [],
     remoteLinks: [],
     worklogs: [],

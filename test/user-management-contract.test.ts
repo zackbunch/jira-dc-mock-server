@@ -121,24 +121,24 @@ test("user-management operations follow the pinned Jira 10.3 contract and persis
 
   await call("/api/2/group", "POST", "/rest/api/2/group", { payload: { name: "contract-reviewers" }, status: 201 });
   await expectError("POST", "/rest/api/2/group", 400, { name: "contract-reviewers" });
-  await call("/api/2/group/user", "POST", "/rest/api/2/group/user?groupname=contract-reviewers", { payload: { name: "alex" }, status: 201 });
+  await call("/api/2/group/user", "POST", "/rest/api/2/group/user?groupname=contract-reviewers", { payload: { name: "frank.lillo" }, status: 201 });
   {
     const { body } = await call("/api/2/group/member", "GET", "/rest/api/2/group/member?groupname=contract-reviewers&startAt=0&maxResults=1&includeInactiveUsers=true");
     const page = body as { startAt: number; maxResults: number; total: number; values: Array<{ name: string }> };
     assert.equal(page.startAt, 0);
     assert.equal(page.maxResults, 1);
     assert.equal(page.total, 1);
-    assert.equal(page.values[0].name, "alex");
+    assert.equal(page.values[0].name, "frank.lillo");
   }
   {
     const { body } = await call("/api/2/groups/picker", "GET", "/rest/api/2/groups/picker?query=contract&maxResults=1");
     assert.deepEqual((body as { groups: Array<{ name: string }> }).groups.map((group) => group.name), ["contract-reviewers"]);
   }
   {
-    const { body } = await call("/api/2/groupuserpicker", "GET", "/rest/api/2/groupuserpicker?query=alex&maxResults=1&showAvatar=true");
-    assert.equal((body as { users: { users: Array<{ name: string }> } }).users.users[0].name, "alex");
+    const { body } = await call("/api/2/groupuserpicker", "GET", "/rest/api/2/groupuserpicker?query=frank&maxResults=1&showAvatar=true");
+    assert.equal((body as { users: { users: Array<{ name: string }> } }).users.users[0].name, "frank.lillo");
   }
-  await call("/api/2/group/user", "DELETE", "/rest/api/2/group/user?groupname=contract-reviewers&username=alex", { schema: "empty" });
+  await call("/api/2/group/user", "DELETE", "/rest/api/2/group/user?groupname=contract-reviewers&username=frank.lillo", { schema: "empty" });
   await expectError("GET", "/rest/api/2/group/member?groupname=missing", 404);
 
   await call("/api/2/mypreferences", "PUT", "/rest/api/2/mypreferences?key=contract.mode", { payload: "compact", status: 204, schema: "empty" });
@@ -290,9 +290,9 @@ test("user-management operations follow the pinned Jira 10.3 contract and persis
     assert.equal(response.statusCode, 204);
   }
   {
-    const response = await app.inject({ method: "GET", url: "/rest/api/2/user?username=alex", headers: authorization });
+    const response = await app.inject({ method: "GET", url: "/rest/api/2/user?username=frank.lillo", headers: authorization });
     assert.equal(response.statusCode, 200);
-    assert.equal(response.json().displayName, "Alex Example");
+    assert.equal(response.json().displayName, "Frank Lillo");
   }
   {
     const response = await app.inject({ method: "GET", url: "/rest/api/2/groups/picker?query=jira-software-users", headers: authorization });

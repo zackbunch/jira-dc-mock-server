@@ -124,8 +124,8 @@ test("all missing issue operations follow Jira 10.3 and persist", async (t) => {
       status: 201,
       payload: {
         issueUpdates: [
-          { fields: { project: { key: "T100ZB" }, issuetype: { id: "10003" }, summary: "First bulk subtask", parent: { key: parent.key }, reporter: { name: "alex" } }, properties: [{ key: "bulk.order", value: "first" }] },
-          { fields: { project: { key: "T100ZB" }, issuetype: { id: "10003" }, summary: "Second bulk subtask", parent: { key: parent.key }, reporter: { name: "alex" } } },
+          { fields: { project: { key: "T100ZB" }, issuetype: { id: "10003" }, summary: "First bulk subtask", parent: { key: parent.key }, reporter: { name: "frank.lillo" } }, properties: [{ key: "bulk.order", value: "first" }] },
+          { fields: { project: { key: "T100ZB" }, issuetype: { id: "10003" }, summary: "Second bulk subtask", parent: { key: parent.key }, reporter: { name: "frank.lillo" } } },
           { fields: { project: { key: "MISSING" }, issuetype: { id: "10003" }, summary: "Invalid bulk issue" } },
         ],
       },
@@ -159,7 +159,7 @@ test("all missing issue operations follow Jira 10.3 and persist", async (t) => {
   }
 
   await call("/api/2/issue/{issueIdOrKey}/assignee", "PUT", `/rest/api/2/issue/${primaryKey}/assignee`, {
-    payload: { name: "alex" }, status: 204, schema: "empty",
+    payload: { name: "frank.lillo" }, status: 204, schema: "empty",
   });
   await expectError("PUT", `/rest/api/2/issue/${primaryKey}/assignee`, 404, { name: "missing" });
 
@@ -220,7 +220,7 @@ test("all missing issue operations follow Jira 10.3 and persist", async (t) => {
     assert.ok(Array.isArray(body.fields.priority.allowedValues));
   }
   await call("/api/2/issue/{issueIdOrKey}/notify", "POST", `/rest/api/2/issue/${primaryKey}/notify`, {
-    payload: { subject: "Contract notification", textBody: "The issue changed.", htmlBody: "<p>The issue changed.</p>", to: { users: [{ name: "alex" }], watchers: true }, restrict: { permissions: [{ key: "BROWSE_PROJECTS" }] } },
+    payload: { subject: "Contract notification", textBody: "The issue changed.", htmlBody: "<p>The issue changed.</p>", to: { users: [{ name: "frank.lillo" }], watchers: true }, restrict: { permissions: [{ key: "BROWSE_PROJECTS" }] } },
     status: 204, schema: "empty",
   });
   await expectError("POST", `/rest/api/2/issue/${primaryKey}/notify`, 400, { subject: "Missing recipients", textBody: "Hello" });
@@ -287,13 +287,13 @@ test("all missing issue operations follow Jira 10.3 and persist", async (t) => {
   }
   await expectError("POST", `/rest/api/2/issue/${primaryKey}/votes`, 404);
 
-  await call("/api/2/issue/{issueIdOrKey}/watchers", "POST", `/rest/api/2/issue/${primaryKey}/watchers?userName=alex`, {
+  await call("/api/2/issue/{issueIdOrKey}/watchers", "POST", `/rest/api/2/issue/${primaryKey}/watchers?userName=frank.lillo`, {
     status: 204, schema: "empty",
   });
   {
     const { body } = await call("/api/2/issue/{issueIdOrKey}/watchers", "GET", `/rest/api/2/issue/${primaryKey}/watchers`);
     assert.equal(body.watchCount, 1);
-    assert.equal(body.watchers[0].name, "alex");
+    assert.equal(body.watchers[0].name, "frank.lillo");
   }
   await expectError("POST", `/rest/api/2/issue/${primaryKey}/watchers?userName=missing`, 400);
 
@@ -342,7 +342,7 @@ test("all missing issue operations follow Jira 10.3 and persist", async (t) => {
   {
     const response = await app.inject({ method: "GET", url: `/rest/api/2/issue/${primaryKey}`, headers: authorization });
     assert.equal(response.statusCode, 200);
-    assert.equal(response.json().fields.assignee.name, "alex");
+    assert.equal(response.json().fields.assignee.name, "frank.lillo");
     assert.equal(response.json().fields.archived, true);
   }
   {
@@ -373,7 +373,7 @@ test("all missing issue operations follow Jira 10.3 and persist", async (t) => {
   await call("/api/2/issue/{issueIdOrKey}/votes", "DELETE", `/rest/api/2/issue/${primaryKey}/votes`, {
     status: 204, schema: "empty",
   });
-  await call("/api/2/issue/{issueIdOrKey}/watchers", "DELETE", `/rest/api/2/issue/${primaryKey}/watchers?username=alex`, {
+  await call("/api/2/issue/{issueIdOrKey}/watchers", "DELETE", `/rest/api/2/issue/${primaryKey}/watchers?username=frank.lillo`, {
     status: 204, schema: "empty",
   });
   await call("/api/2/issue/{issueIdOrKey}/worklog/{id}", "DELETE", `/rest/api/2/issue/${primaryKey}/worklog/${worklogId}?adjustEstimate=manual&increaseBy=2h`, {

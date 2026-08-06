@@ -67,9 +67,9 @@ curl -X POST \
 
 ## Seed data
 
-The mock starts with three projects and fifteen synthetic issues organized by tenant-style Jira project keys:
+The mock starts with three projects, 103 synthetic issues, and the Software Factory team of Zack Bunch, Frank Lillo, and Michael Welnick. Data is organized by tenant-style Jira project keys:
 
-- `T100ZB` belongs to the T100 Software Factory tenant. It contains twelve issues across To Do, In Progress, and Done, covering CI pipelines, golden-path templates, ephemeral environments, artifact governance, software supply-chain security, build runners, SBOMs, and DORA metrics.
+- `T100ZB` belongs to the T100 Software Factory tenant. It contains 100 issues assigned across the three-person team and distributed across To Do, In Progress, and Done. Topics include CI pipelines, golden-path templates, ephemeral environments, artifact governance, software supply-chain security, build runners, SBOMs, DORA metrics, platform observability, incident response, and cloud cost visibility.
 - `T101LIB` and `T101OPS` belong to the shared T101 tenant. Their common libraries and reusable delivery automation are intended to be accessible to every tenant.
 
 Reset the server at any time with `POST /__admin/reset` to restore this dataset.
