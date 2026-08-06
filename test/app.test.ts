@@ -37,6 +37,26 @@ test("serves Swagger UI and an OpenAPI document", async (t) => {
   assert.ok(specification.paths["/rest/api/2/issue/{issueIdOrKey}/transitions"].post);
 });
 
+test("serves the local data inspector without bypassing API authentication", async (t) => {
+  const app = testApp(t);
+  const rootResponse = await app.inject({ method: "GET", url: "/" });
+  const dashboardResponse = await app.inject({ method: "GET", url: "/dashboard" });
+  const stylesResponse = await app.inject({ method: "GET", url: "/dashboard/styles.css" });
+  const scriptResponse = await app.inject({ method: "GET", url: "/dashboard/app.js" });
+
+  assert.equal(rootResponse.statusCode, 302);
+  assert.equal(rootResponse.headers.location, "/dashboard");
+  assert.equal(dashboardResponse.statusCode, 200);
+  assert.match(dashboardResponse.headers["content-type"] ?? "", /text\/html/);
+  assert.match(dashboardResponse.body, /<title>Jira Mock<\/title>/);
+  assert.match(dashboardResponse.body, /Reset seed data/);
+  assert.match(stylesResponse.headers["content-type"] ?? "", /text\/css/);
+  assert.match(scriptResponse.headers["content-type"] ?? "", /javascript/);
+
+  const apiResponse = await app.inject({ method: "GET", url: "/rest/api/2/project" });
+  assert.equal(apiResponse.statusCode, 401);
+});
+
 test("requires Jira authentication", async (t) => {
   const app = testApp(t);
   const response = await app.inject({ method: "GET", url: "/rest/api/2/myself" });

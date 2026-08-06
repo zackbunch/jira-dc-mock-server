@@ -15,6 +15,7 @@ ENV NODE_ENV=production \
 COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=build /app/dist/src ./dist/src
+COPY public ./public
 RUN mkdir -p /app/data && chown -R node:node /app
 USER node
 EXPOSE 8080

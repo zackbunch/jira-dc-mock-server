@@ -16,6 +16,14 @@ Open the interactive Swagger UI at:
 http://localhost:8080/documentation
 ```
 
+Open the compact data inspector at:
+
+```text
+http://localhost:8080/dashboard
+```
+
+The dashboard shows server health, projects, searchable and filterable issues, issue details, comments, and raw API responses. It uses the same Jira REST endpoints and authentication as other clients. The default bearer token is `local-test-token`; the token field keeps any replacement only for the current browser tab. The reset action asks for confirmation before restoring the deterministic seed data.
+
 The generated OpenAPI documents are available at:
 
 ```text
@@ -126,6 +134,8 @@ npm run dev
 ```
 
 Persistent state is written atomically to `data/state.json`. Configuration is documented in `.env.example`.
+
+The dashboard is served by the same Fastify process. Its framework-free assets live in `public/dashboard`, so there is no separate frontend server or build command.
 
 ## Intentional limitations
 

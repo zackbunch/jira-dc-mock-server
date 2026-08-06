@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="oklch(1 0 0)">
+    <meta name="description" content="Inspect projects and issues in the local Jira Data Center mock server.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b34a20'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-size='18' font-weight='700' fill='white'%3E/%3C/text%3E%3C/svg%3E">
+    <title>Jira Mock</title>
+    <link rel="stylesheet" href="/dashboard/styles.css">
+    <script src="/dashboard/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#issues-workspace">Skip to issues</a>
+
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></symbol>
+      <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 5v6h-6"></path></symbol>
+      <symbol id="icon-docs" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"></path><path d="M14 3v4h4M9 12h6M9 16h6"></path></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></symbol>
+      <symbol id="icon-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"></path></symbol>
+      <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"></path><path d="M12 9v5M12 17.5v.5"></path></symbol>
+      <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"></path></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/dashboard" aria-label="Jira Mock dashboard">
+          <span class="brand-mark" aria-hidden="true">{<b>/</b>}</span>
+          <span>Jira Mock</span>
+        </a>
+
+        <div class="server-status" id="server-status" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span class="server-status-label">Checking server</span>
+        </div>
+
+        <div class="topbar-actions">
+          <form class="token-form" id="token-form">
+            <label for="token-input">Bearer token</label>
+            <div class="token-control">
+              <input id="token-input" name="token" type="password" autocomplete="off" spellcheck="false" value="local-test-token">
+              <button class="compact-button" type="submit">Apply</button>
+            </div>
+          </form>
+          <a class="button button-quiet" href="/documentation" target="_blank" rel="noreferrer" aria-label="Open API documentation">
+            <svg aria-hidden="true"><use href="#icon-docs"></use></svg>
+            <span>Documentation</span>
+          </a>
+          <button class="button button-danger" id="open-reset" type="button" aria-label="Reset seed data">
+            <svg aria-hidden="true"><use href="#icon-refresh"></use></svg>
+            <span>Reset seed data</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="auth-banner" id="auth-banner" role="alert" hidden>
+        <svg aria-hidden="true"><use href="#icon-alert"></use></svg>
+        <div>
+          <strong>Authentication failed</strong>
+          <p>Check the bearer token above, then choose Apply.</p>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <nav class="project-rail" aria-label="Projects">
+          <div class="rail-heading">
+            <span>Projects</span>
+            <button class="icon-button" id="refresh-projects" type="button" aria-label="Refresh projects">
+              <svg aria-hidden="true"><use href="#icon-refresh"></use></svg>
+            </button>
+          </div>
+          <div id="project-list" class="project-list" aria-live="polite">
+            <div class="project-skeleton" aria-hidden="true"></div>
+            <div class="project-skeleton" aria-hidden="true"></div>
+            <div class="project-skeleton" aria-hidden="true"></div>
+          </div>
+          <div class="rail-footer">
+            <svg aria-hidden="true"><use href="#icon-database"></use></svg>
+            <span>Local state</span>
+          </div>
+        </nav>
+
+        <main class="issues-workspace" id="issues-workspace" tabindex="-1">
+          <div class="workspace-heading">
+            <div>
+              <h1>Issues</h1>
+              <p id="result-summary">Loading issues…</p>
+            </div>
+            <button class="button button-quiet" id="refresh-issues" type="button" aria-label="Refresh issues">
+              <svg aria-hidden="true"><use href="#icon-refresh"></use></svg>
+              <span>Refresh</span>
+            </button>
+          </div>
+
+          <form class="filters" id="filter-form" role="search">
+            <div class="field field-search">
+              <label for="search-input">Search issues</label>
+              <div class="search-control">
+                <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+                <input id="search-input" type="search" placeholder="Summary, text, or issue key" autocomplete="off">
+                <kbd>/</kbd>
+              </div>
+            </div>
+            <div class="field">
+              <label for="project-select">Project</label>
+              <select id="project-select"><option value="">All projects</option></select>
+            </div>
+            <div class="field">
+              <label for="status-select">Status</label>
+              <select id="status-select"><option value="">All statuses</option></select>
+            </div>
+            <div class="field">
+              <label for="assignee-select">Assignee</label>
+              <select id="assignee-select"><option value="">Anyone</option></select>
+            </div>
+            <button class="button button-quiet clear-filters" id="clear-filters" type="button" hidden>Clear</button>
+          </form>
+
+          <div class="table-region" id="table-region" aria-busy="true">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Key</th>
+                    <th scope="col">Summary</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" class="column-assignee">Assignee</th>
+                    <th scope="col" class="column-priority">Priority</th>
+                    <th scope="col" class="column-updated">Updated</th>
+                  </tr>
+                </thead>
+                <tbody id="issues-body"></tbody>
+              </table>
+            </div>
+            <div class="empty-state" id="empty-state" hidden>
+              <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+              <h2>No matching issues</h2>
+              <p>Try broadening the search or clearing a filter.</p>
+              <button class="button button-secondary" id="empty-clear" type="button">Clear filters</button>
+            </div>
+            <div class="error-state" id="error-state" role="alert" hidden>
+              <svg aria-hidden="true"><use href="#icon-alert"></use></svg>
+              <h2>Issues could not be loaded</h2>
+              <p id="error-message">The server returned an unexpected response.</p>
+              <button class="button button-secondary" id="retry-load" type="button">Try again</button>
+            </div>
+          </div>
+
+          <nav class="pagination" aria-label="Issue pages">
+            <span id="page-range">—</span>
+            <div class="pagination-actions">
+              <button class="icon-button" id="previous-page" type="button" aria-label="Previous page" disabled>
+                <svg class="icon-back" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              </button>
+              <span id="page-label">Page 1</span>
+              <button class="icon-button" id="next-page" type="button" aria-label="Next page" disabled>
+                <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              </button>
+            </div>
+          </nav>
+        </main>
+
+        <aside class="issue-panel" id="issue-panel" aria-labelledby="issue-panel-title">
+          <div class="issue-panel-empty" id="issue-panel-empty">
+            <div class="empty-brackets" aria-hidden="true">{<b>/</b>}</div>
+            <h2 id="issue-panel-title">Inspect an issue</h2>
+            <p>Select an issue to view its fields, comments, and raw API response.</p>
+          </div>
+          <div class="issue-panel-content" id="issue-panel-content" hidden></div>
+        </aside>
+      </div>
+    </div>
+
+    <dialog id="reset-dialog" aria-labelledby="reset-title">
+      <form method="dialog" class="dialog-content">
+        <div class="dialog-icon" aria-hidden="true"><svg><use href="#icon-refresh"></use></svg></div>
+        <div>
+          <h2 id="reset-title">Restore seed data?</h2>
+          <p>This removes changes made through the mock API and restores the deterministic projects and issues.</p>
+        </div>
+        <div class="dialog-actions">
+          <button class="button button-secondary" value="cancel">Cancel</button>
+          <button class="button button-danger-fill" id="confirm-reset" value="confirm">Reset now</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <noscript><p class="noscript">The Jira Mock dashboard requires JavaScript. The REST API and <a href="/documentation">documentation</a> remain available.</p></noscript>
+  </body>
+</html>
