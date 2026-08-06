@@ -57,6 +57,15 @@ curl -X POST \
   http://localhost:8080/__admin/reset
 ```
 
+## Seed data
+
+The mock starts with three projects and fifteen synthetic issues organized by tenant-style Jira project keys:
+
+- `T100ZB` belongs to the T100 Software Factory tenant. It contains twelve issues across To Do, In Progress, and Done, covering CI pipelines, golden-path templates, ephemeral environments, artifact governance, software supply-chain security, build runners, SBOMs, and DORA metrics.
+- `T101LIB` and `T101OPS` belong to the shared T101 tenant. Their common libraries and reusable delivery automation are intended to be accessible to every tenant.
+
+Reset the server at any time with `POST /__admin/reset` to restore this dataset.
+
 ## Implemented API subset
 
 | Operation | Endpoint |
@@ -93,14 +102,14 @@ Unsupported JQL returns a Jira-shaped `400` response instead of silently produci
 curl -sS -X POST http://localhost:8080/rest/api/2/search \
   -H 'Authorization: Bearer local-test-token' \
   -H 'Content-Type: application/json' \
-  -d '{"jql":"project = ENG AND status = \"To Do\"","fields":["summary","status"]}' | jq
+  -d '{"jql":"project = T100ZB AND status = \"To Do\"","fields":["summary","status"]}' | jq
 
 # Discover valid transitions
-curl -sS http://localhost:8080/rest/api/2/issue/ENG-2/transitions \
+curl -sS http://localhost:8080/rest/api/2/issue/T100ZB-2/transitions \
   -H 'Authorization: Bearer local-test-token' | jq
 
 # Perform transition 21 (Start Progress)
-curl -sS -X POST http://localhost:8080/rest/api/2/issue/ENG-2/transitions \
+curl -sS -X POST http://localhost:8080/rest/api/2/issue/T100ZB-2/transitions \
   -H 'Authorization: Bearer local-test-token' \
   -H 'Content-Type: application/json' \
   -d '{"transition":{"id":"21"}}'

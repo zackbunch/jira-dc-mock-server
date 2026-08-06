@@ -59,6 +59,7 @@ test("reports Jira Data Center 10.3.5 server information", async (t) => {
   assert.equal(response.statusCode, 200);
   assert.equal(response.json().version, "10.3.5");
   assert.equal(response.json().deploymentType, "Data Center");
+  assert.equal("healthChecks" in response.json(), false);
 });
 
 test("searches seeded issues with JQL and pagination", async (t) => {
@@ -68,7 +69,7 @@ test("searches seeded issues with JQL and pagination", async (t) => {
     url: "/rest/api/2/search",
     headers: authorization,
     payload: {
-      jql: 'project = ENG AND status = "To Do" ORDER BY created DESC',
+      jql: 'project = T101LIB AND status = "To Do" ORDER BY created DESC',
       fields: ["summary", "status"],
       maxResults: 10,
     },
@@ -77,8 +78,32 @@ test("searches seeded issues with JQL and pagination", async (t) => {
   assert.equal(response.statusCode, 200);
   const result = response.json();
   assert.equal(result.total, 1);
-  assert.equal(result.issues[0].key, "ENG-2");
+  assert.equal(result.issues[0].key, "T101LIB-2");
   assert.deepEqual(Object.keys(result.issues[0].fields).sort(), ["status", "summary"]);
+});
+
+test("seeds a varied software factory backlog", async (t) => {
+  const app = testApp(t);
+  const response = await app.inject({
+    method: "POST",
+    url: "/rest/api/2/search",
+    headers: authorization,
+    payload: {
+      jql: "project = T100ZB ORDER BY key ASC",
+      fields: ["summary", "status", "priority", "labels"],
+      maxResults: 50,
+    },
+  });
+
+  assert.equal(response.statusCode, 200);
+  const result = response.json();
+  assert.equal(result.total, 12);
+  assert.equal(result.issues[0].key, "T100ZB-1");
+  assert.equal(result.issues.at(-1).key, "T100ZB-12");
+  assert.deepEqual(
+    new Set(result.issues.map((issue: { fields: { status: { name: string } } }) => issue.fields.status.name)),
+    new Set(["To Do", "In Progress", "Done"]),
+  );
 });
 
 test("creates, edits, comments on, and transitions an issue", async (t) => {
@@ -89,7 +114,7 @@ test("creates, edits, comments on, and transitions an issue", async (t) => {
     headers: authorization,
     payload: {
       fields: {
-        project: { key: "ENG" },
+        project: { key: "T100ZB" },
         issuetype: { name: "Bug" },
         summary: "Agent-created issue",
         description: "Created during a local integration test.",
@@ -99,7 +124,7 @@ test("creates, edits, comments on, and transitions an issue", async (t) => {
   });
   assert.equal(createdResponse.statusCode, 201);
   const created = createdResponse.json();
-  assert.equal(created.key, "ENG-3");
+  assert.equal(created.key, "T100ZB-13");
 
   const editResponse = await app.inject({
     method: "PUT",
