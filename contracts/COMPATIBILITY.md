@@ -31,6 +31,9 @@ The tests use narrow, documented workarounds for these upstream issues rather th
 5. `POST /reindex/request` describes an array of request IDs but declares a single integer response, and `GET /reindex/request/bulk` describes an array of results but declares one `ReindexRequestBean`. The mock follows those pinned schemas by returning one deterministic ID or request object per call.
 6. `GET /index-snapshot` describes a list but declares one `IndexSnapshotBean`. The mock returns the newest available snapshot so the response remains schema-valid.
 7. `GET /cluster/nodes` describes a list of nodes but declares the item schema `NodeBean`. Tests validate each node in the returned array against that schema, matching Jira's documented collection behavior.
+8. The paginated issue type, priority, status, resolution, and custom-field operations reference an item bean (and, for resolutions, an empty bean) instead of a page schema. Tests validate every value against the referenced item schema and separately assert the Jira page envelope and pagination fields.
+9. `DELETE /issuetype/{id}` declares `alternativeIssueTypeId` as a required path parameter even though it is absent from the path template. The mock accepts it as the query parameter used to select a migration target.
+10. The temporary issue-type avatar upload declares an object schema under `text/html`. The mock's deterministic multipart simulation returns the schema-valid JSON representation with that documented media type.
 
 ## Fidelity boundary
 
