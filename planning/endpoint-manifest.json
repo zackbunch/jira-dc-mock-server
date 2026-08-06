@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-06T16:14:53.648Z",
+  "generatedAt": "2026-08-06T16:18:35.794Z",
   "contract": "contracts/jira-software-dc-10.3-openapi.json",
   "contractVersion": "10.3.24",
   "scope": "OpenAPI operations whose path is /api/2 or begins with /api/2/",
   "routePrefix": "/rest/api/2",
   "summary": {
     "totalOperations": 383,
-    "implementedOperations": 34,
-    "testedOperations": 34,
-    "missingOperations": 349
+    "implementedOperations": 45,
+    "testedOperations": 45,
+    "missingOperations": 338
   },
   "groups": [
     {
@@ -92,8 +92,8 @@
     {
       "tag": "reindex",
       "total": 7,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 7,
+      "tested": 7
     },
     {
       "tag": "component",
@@ -182,8 +182,8 @@
     {
       "tag": "index-snapshot",
       "total": 3,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 3,
+      "tested": 3
     },
     {
       "tag": "issueLink",
@@ -320,8 +320,8 @@
     {
       "tag": "index",
       "total": 1,
-      "implemented": 0,
-      "tested": 0
+      "implemented": 1,
+      "tested": 1
     },
     {
       "tag": "licenseValidator",
@@ -3671,8 +3671,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -3701,8 +3701,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -3731,8 +3731,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -3761,8 +3761,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -11856,8 +11856,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -11926,8 +11926,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -12000,8 +12000,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -12041,8 +12041,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -12073,8 +12073,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -12115,8 +12115,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []
@@ -12161,8 +12161,8 @@
           }
         }
       },
-      "implementationStatus": "missing",
-      "testStatus": "not-tested",
+      "implementationStatus": "implemented",
+      "testStatus": "schema-and-behavior-tested",
       "assignedAgent": null,
       "notes": [],
       "contractExceptions": []

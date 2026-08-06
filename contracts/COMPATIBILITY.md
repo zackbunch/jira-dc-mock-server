@@ -28,6 +28,8 @@ The tests use narrow, documented workarounds for these upstream issues rather th
 2. `IssueBean.fields` is dynamic, but the generated schema declares every field value as an object even though Jira's own examples include strings, arrays, numbers, and nulls. Tests relax only `fields.additionalProperties` and retain the rest of `IssueBean` validation.
 3. Several schemas, including `ServerInfoBean`, define no required properties. The tests add focused assertions for important identifiers and collection structure so an empty object cannot pass unnoticed.
 4. `GET /application-properties/advanced-settings` describes and exemplifies an array of properties, but its generated response schema is a single `Property`. The mock returns one deterministic advanced property to follow the pinned response schema; this is intentionally less complete than Jira's real advanced-settings listing.
+5. `POST /reindex/request` describes an array of request IDs but declares a single integer response, and `GET /reindex/request/bulk` describes an array of results but declares one `ReindexRequestBean`. The mock follows those pinned schemas by returning one deterministic ID or request object per call.
+6. `GET /index-snapshot` describes a list but declares one `IndexSnapshotBean`. The mock returns the newest available snapshot so the response remains schema-valid.
 
 ## Fidelity boundary
 
