@@ -1,0 +1,20 @@
+services:
+  jira-mock:
+    build:
+      context: .
+    image: jira-dc-10.3-mock:local
+    ports:
+      - "8080:8080"
+    environment:
+      JIRA_BASE_URL: http://localhost:8080
+      JIRA_MOCK_TOKEN: local-test-token
+      JIRA_MOCK_USERNAME: developer
+      JIRA_MOCK_PASSWORD: developer
+      JIRA_REQUIRE_AUTH: "true"
+      DATA_FILE: /app/data/state.json
+    volumes:
+      - jira-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  jira-data:
