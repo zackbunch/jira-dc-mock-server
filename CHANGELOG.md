@@ -9,6 +9,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Added
 
+- Added a pinned Confluence Data Center 10.0.3 OpenAPI contract, checksum, and update command.
 - Added a compact, responsive Jira data inspector at `/dashboard` with project navigation, issue search and filtering, issue details, comments, and raw API response inspection.
 - Added browser-session bearer token handling, server health feedback, accessible keyboard controls, mobile issue inspection, and a guarded seed-data reset flow.
 - Added dashboard route coverage, Docker packaging for the framework-free frontend assets, and product/design documentation for future UI work.
