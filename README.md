@@ -125,39 +125,11 @@ curl -sS -X POST http://localhost:8080/rest/api/2/issue/T100ZB-2/transitions \
 
 ## Agent CLI
 
-The repository includes `jira-agent`, a Go CLI designed for deterministic agent use. It writes successful JSON to stdout, structured errors to stderr, and supports both focused Jira workflows and arbitrary REST requests.
-
-Download a prebuilt Linux, macOS, or Windows archive from the [latest GitHub release](https://github.com/zackbunch/jira-dc-mock-server/releases/latest). Each release includes amd64 and arm64 builds plus `SHA256SUMS`.
-
-```bash
-# Build for the current machine
-make cli
-./bin/jira-agent health
-
-# Or run directly during development
-go run ./cmd/jira-agent issue search \
-  --jql 'project = T100ZB AND status = "To Do"' \
-  --fields key,summary,status
-```
-
-Configure a different server with `JIRA_BASE_URL` and `JIRA_TOKEN`, or use `JIRA_USERNAME` and `JIRA_PASSWORD` for Basic Auth. Run `jira-agent --help` for all commands. The bundled agent skill is at `.agents/skills/jira-agent/SKILL.md`.
-
-Build release archives for Linux, Windows, and macOS on both amd64 and arm64:
-
-```bash
-make cli-release VERSION=v0.2.0
-# Artifacts and SHA256SUMS are written under dist/cli.
-```
-
-The release builder uses only the Go toolchain and can also be run on Windows:
-
-```text
-go run ./scripts/build-cli.go --version v0.2.0
-```
+Use the separate [`jira-agent-cli`](https://github.com/zackbunch/jira-agent-cli) project to operate this mock or a Jira Software Data Center instance from an agent. It exposes all 433 operations in the pinned Jira contract and publishes Linux, macOS, and Windows binaries.
 
 ## Local development
 
-The server requires Node.js 22 or newer. The CLI requires Go 1.22 or newer.
+Requires Node.js 22 or newer.
 
 ```bash
 npm install
