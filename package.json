@@ -1,6 +1,6 @@
 {
   "name": "jira-dc-mock-server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "A stateful mock of the Jira Data Center 10.3 REST API for local agent development",
   "type": "module",
