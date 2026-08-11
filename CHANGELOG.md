@@ -9,7 +9,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 
 ### Changed
 
-- Moved the Go CLI, agent skill, complete Jira command registry, tests, and cross-platform binaries to the separate [`jira-agent-cli`](https://github.com/zackbunch/jira-agent-cli) project.
+- Moved the Go CLI, agent skill, complete Jira command registry, tests, and cross-platform binaries to the separate [`galileo`](https://github.com/zackbunch/galileo-cli) project.
 
 ## 0.2.0 - 2026-08-11
 

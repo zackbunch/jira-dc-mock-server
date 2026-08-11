@@ -125,7 +125,7 @@ curl -sS -X POST http://localhost:8080/rest/api/2/issue/T100ZB-2/transitions \
 
 ## Agent CLI
 
-Use the separate [`jira-agent-cli`](https://github.com/zackbunch/jira-agent-cli) project to operate this mock or a Jira Software Data Center instance from an agent. It exposes all 433 operations in the pinned Jira contract and publishes Linux, macOS, and Windows binaries.
+Use the separate [`galileo`](https://github.com/zackbunch/galileo-cli) Cobra CLI to operate this mock or a Jira Software Data Center instance from an agent. Its `galileo jira` command exposes all 433 operations in the pinned Jira contract and publishes Linux, macOS, and Windows binaries.
 
 ## Local development
 
